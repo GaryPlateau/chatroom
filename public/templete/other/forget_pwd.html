@@ -1,0 +1,505 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>找回密码</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
+
+   <!--  <link rel="stylesheet" href="assets/css/style.css"> -->
+    <link rel="stylesheet" href="/assets/css/loader-style.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/signin.css">
+
+    <link href="/assets/js/iCheck/flat/all.css" rel="stylesheet">
+    <link href="/assets/js/iCheck/line/all.css" rel="stylesheet">
+    <link href="/assets/js/colorPicker/bootstrap-colorpicker.css" rel="stylesheet">
+    <link href="/assets/js/idealform/css/jquery.idealforms.css" rel="stylesheet">
+
+    <!-- MAIN EFFECT -->
+    <script type="text/javascript" src="/assets/js/preloader.js"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/assets/js/app.js"></script>
+
+    <!-- /MAIN EFFECT -->
+    <script type="text/javascript" src="/assets/js/iCheck/jquery.icheck.js"></script>
+    <script type="text/javascript" src="/assets/js/tree/lib/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/assets/js/layui/layui.js"></script>
+
+    <!-- Fav and touch icons -->
+    <link rel="shortcut icon" href="/assets/ico/minus.png">
+</head>
+
+<body> 
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
+    
+    <div class="container">
+        <div class="" id="login-wrapper">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div id="logo-login">
+                        <h1>忘记密码</h1>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="account-box"> 
+                        <form id="verify_form" role="form">
+                            <div class="form-group">
+                                <!--a href="#" class="pull-right label-forgot">Forgot email?</a-->
+                                <label for="inputPhone">手机号</label>
+                                <input type="text" id="inputPhone" class="form-control" style="width:70%;">
+                                <div id="phone" style="display: flex; position: absolute; top: 45px; left: 285px; height: 50px;" >
+                                    <input tabindex="17" type="checkbox" id="line-checkbox-1" checked="checked">
+                                    <label for="line-checkbox-1"></label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!--a href="#" class="pull-right label-forgot">Forgot password?</a-->
+                                <label for="inputEmail">邮箱</label>
+                                <input type="text" id="inputEmail" class="form-control" style="width:70%;">
+                                <div id="email" style="display: flex; position: absolute; top: 119px; left: 285px; height: 50px;" >
+                                    <input tabindex="18" type="checkbox" id="line-checkbox-2">
+                                    <label for="line-checkbox-2"></label>
+                                </div>
+                            </div>
+							<div class="form-group">
+								<label for="validateCode">校验码</label>
+								<input type='text' id="validateCode" class="form-control" name="validateCode" autocomplete="off" style="width:70%;" maxlength="4">
+								<div id="verify" style="position:relative; left:70%; margin-top:-11%; width:35%;"><img id="verify_img" style="width:100%" alt="点击换一张" title="点击换一张" src="captcha"></div>
+							</div>
+                            <div class="form-group">
+                                <!--a href="#" class="pull-right label-forgot">Forgot password?</a-->
+                                <label for="inputCode">验证码</label>
+                                <input type="text" id="inputCode" class="form-control" style="width:70%;" maxlength="6">
+                                <input id="verifyCode" style="position: relative; margin-top:-11%;" class="btn btn btn-primary pull-right" type="button" value="获取验证码">
+                            </div>
+                            <input id="comfirm" style="margin-right: 140px;" class="btn btn btn-primary pull-right" type="button" value="提 交">
+                        </form>
+
+                        <div id="change_pwd" style="margin-bottom: 70px">
+                            <div class="or-box">
+                                <span class="text-center login-with">修改<b>密码</b></span>
+                                <div class="form-group">
+                                    <!--a href="#" class="pull-right label-forgot">Forgot email?</a-->
+                                    <label for="inputPhone">账户</label>
+                                    <input type="text" id="account" class="form-control" readonly="readonly">
+                                </div>
+                                <div class="form-group">
+                                    <!--a href="#" class="pull-right label-forgot">Forgot email?</a-->
+                                    <label for="inputPhone">请输入新密码</label>
+                                    <input type="password" id="new_password" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <!--a href="#" class="pull-right label-forgot">Forgot email?</a-->
+                                    <label for="inputPhone">再次输入密码</label>
+                                    <input type="password" id="verify_password" class="form-control">
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row-block">
+                                <div class="row">
+                                    <div class="col-md-12 row-block">
+                                        <input id="cComfirm" type="button" class="btn btn-primary btn-block" value="确 定">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row-block">
+	                        <div class="row">
+		                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+ 		<p>&nbsp;</p>
+        <div style="text-align:center;margin:0 auto;">
+            <h6 style="color:#fff;">Copyright(C)2022 julizhibei.cn All Rights Reserved<br />
+				重庆****科技有限公司 版权所有 渝IP备070***05号</h6>
+        </div>
+
+    </div>
+    <!--  END OF PAPER WRAP -->
+    <script>
+        //电话或邮箱选择事件
+        $(document).ready(function() {
+            $('#inputPhone').focus();
+            $('#inputEmail').attr('disabled', 'true');
+
+            $("#phone").iCheck({
+                checkboxClass: 'icheckbox_line-blue',
+                radioClass: 'iradio_line-blue',
+                insert: '<div class="icheck_line-icon"></div>' + "手机"
+            });
+            $("#email").iCheck({
+                checkboxClass: 'icheckbox_line-blue',
+                radioClass: 'iradio_line-blue',
+                insert: '<div class="icheck_line-icon"></div>' + "邮箱"
+            });
+
+            $('#phone input[type=checkbox]').on('ifChecked', function(obj){
+                $('#email input[type=checkbox]').iCheck('uncheck');
+                $('#inputPhone').prop('disabled', '');
+                $('#inputEmail').prop('disabled', 'true');
+                $('#inputEmail').blur();
+                $('#inputPhone').focus();
+                $('#inputEmail').val('');
+            })
+
+            $('#phone input[type=checkbox]').on('ifUnchecked', function(obj){
+                $('#email input[type=checkbox]').iCheck('check');
+                $('#inputPhone').prop('disabled', 'true');
+                $('#inputEmail').prop('disabled', '');
+                $('#inputPhone').blur();
+                $('#inputEmail').focus();
+                $('#inputPhone').val('');
+            })
+
+            $('#email input[type=checkbox]').on('ifChecked', function(obj){
+                $('#phone input[type=checkbox]').iCheck('uncheck');
+                $('#inputPhone').prop('disabled', 'ture');
+                $('#inputEmail').prop('disabled', '');
+                $('#inputPhone').blur();
+                $('#inputEmail').focus();
+                $('#inputPhone').val('');
+            })
+
+            $('#email input[type=checkbox]').on('ifUnchecked', function(obj){
+                $('#phone input[type=checkbox]').iCheck('check');
+                $('#inputPhone').prop('disabled', '');
+                $('#inputEmail').prop('disabled', 'true');
+                $('#inputEmail').blur();
+                $('#inputPhone').focus();
+                $('#inputEmail').val('');
+            })
+        });
+    </script>
+
+    <script type="text/javascript">
+    $(function() {
+        if($.cookie('total')){
+            timekeeping();
+        }
+
+        $('#change_pwd').hide();
+
+        var regMobile = /^1[3,4,5,7,8,9]\d{9}$/;
+        var regEmail = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+
+        $(document).keypress(function (e) {
+            if (e.which == 13) {
+                $("#confirm").click();
+            }
+        });
+		
+		// 更新校验码
+		$("#verify").on('click', function (){
+			$('#verify_img').attr("src","captcha?"+Math.random());
+		});
+
+        //提交验证码
+        $('#comfirm').on('click', function(){
+
+           var $inputCode = $('#inputCode').val();
+           var $inputEmail = $('#inputEmail').val();
+           var $inputPhone = $('#inputPhone').val();
+           if($inputCode == '' || $inputCode.length <= 0){
+               alert("请输入验证码");
+               return false;
+           }
+
+           if($inputEmail != '' && $inputEmail.length > 0){
+               var data = {
+                   'inputEmail': $inputEmail,
+                   'inputCode': $inputCode
+               };
+           }else if($inputPhone != '' && $inputPhone.length > 0){
+               var data = {
+                   'inputPhone': $inputPhone,
+                   'inputCode': $inputCode
+               };
+           }else {
+                return false;
+           }
+
+            $.ajax({
+                async: false,
+                url: "/login/forget_pwd/checkVerifyCode",
+                type: "post",
+                data: {
+                    data
+                },
+                dataType: "JSON",
+                contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                timeout: 30000,
+                success: function (result) {
+                    if(result.code == 0) {
+                        alert(result.msg);
+                        return false;
+                    }
+                    else{
+                        $('#verify_form').hide();
+                        $('#change_pwd').show();
+                        $('#account').val(result.msg);
+                    }
+                },
+                error: function (e) {
+                    console.log(e);
+                }
+            });
+        });
+
+        //验证码确认
+        $("#verifyCode").on("click", function(){
+            var $inputPhone = $('#inputPhone').val();
+            var $inputEmail = $('#inputEmail').val();
+            var $validateCode = $('#validateCode').val();
+
+            if(!$('#inputPhone').prop('disabled')) {
+				if ( $validateCode == null || $validateCode == '' ) {
+					alert("请输入校验码");
+                    return false;
+				}
+			
+                if ($inputPhone == null || $inputPhone == '' || !$inputPhone.match(regMobile)) {
+                    alert("请输入正确的手机号码");
+                    return false;
+                } else {
+                    $.ajax({
+                        async: false,
+                        url: "/login/forget_pwd/checkPhoneOrEmail",
+                        type: "post",
+                        data: {
+                            'inputPhone': $inputPhone,
+							'validateCode': $validateCode
+                        },
+                        dataType: "JSON",
+                        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                        timeout: 30000,
+                        success: function (result) {
+                            if(result.code == 0) {
+                                alert(result.msg);
+                                return false;
+                            }
+                            else{
+                                sendChangePhone();
+                                alert(result.msg);
+                                return false;
+                            }
+                        },
+                        error: function (e) {
+                            console.log(e);
+                        }
+                    });
+                }
+            }
+
+            if(!$('#inputEmail').prop('disabled')) {
+				if ( $validateCode == null || $validateCode == '' ) {
+					alert("请输入校验码");
+                    return false;
+				}
+				
+                if ($inputEmail == null || $inputEmail == '' || !$inputEmail.match(regEmail)) {
+                    alert("请输入正确的邮箱地址");
+                    return false;
+                } else {
+                    $.ajax({
+                        async: false,
+                        url: "/login/forget_pwd/checkPhoneOrEmail",
+                        type: "post",
+                        data: {
+                            'inputEmail': $inputEmail,
+							'validateCode': $validateCode
+                        },
+                        dataType: "JSON",
+                        contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                        timeout: 30000,
+                        success: function (result) {
+                            if(result.code == 0) {
+                                alert(result.msg);
+                                return false;
+                            }
+                            else if(result.code == 1){
+                                sendChangeEmail();
+                                return false;
+                            }else{
+                                return false;
+                            }
+                        },
+                        error: function (e) {
+                            console.log(e);
+                        }
+                    });
+                }
+            }
+        });
+
+    });
+
+    $("#verify_password , #new_password").keyup(function(){
+        var newPwd = $('#new_password').val();
+        var verifyPwd = $('#verify_password').val();
+        if(newPwd != verifyPwd) {
+            $('#cComfirm').val('两次输入的密码不一致');
+            $('#cComfirm').prop('disabled', true);
+        }else{
+            $('#cComfirm').val('确定');
+            $('#cComfirm').prop('disabled', false);
+        }
+    })
+
+    /**
+     * 提交修改密码
+     */
+    $('#cComfirm').on('click', function (){
+        var account = $('#account').val();
+        var newPwd = $('#new_password').val();
+        var verifyPwd = $('#verify_password').val();
+		
+		layui.use('layer', function(){
+           var layer = layui.layer;
+        });
+
+        if(newPwd == '' || newPwd.length <= 0){
+            alert('修改密码不能为空');
+            return false;
+        }else if(verifyPwd == '' || verifyPwd.length <= 0){
+            alert('修改密码不能为空');
+            return false;
+        }
+
+        $.ajax({
+            async: false,
+            url: "/login/forget_pwd/updatePwd",
+            type: "post",
+            data: {
+                'account': account,
+                'pwd': verifyPwd
+            },
+            dataType: "JSON",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            timeout: 30000,
+            success: function (result) {
+                if(result.code == 0) {
+                    alert(result.msg);
+                    var index = parent.layer.getFrameIndex(window.name);
+                    parent.layer.close(index);
+                    return false;
+                } else if(result.code == 1){
+                    alert(result.msg);
+                    return false;
+                }else{
+                    return false;
+                }
+            },
+            error: function (e) {
+                console.log(e);
+            }
+        });
+        return false;
+    });
+
+    /**
+     * 发送邮箱验证
+     */
+    function sendChangeEmail()
+    {
+        var obj = $('#inputEmail');
+        $inputEmail = obj.val();
+        $.ajax({
+            async: false,
+            url: "/login/forget_pwd/sendchangeemail",
+            type: "post",
+            data: {
+                'inputEmail': $inputEmail
+            },
+            dataType: "JSON",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            timeout: 30000,
+            success: function (data) {
+                console.log(data);
+                alert(data.msg);
+                if (data.code == 1) {
+                    $.cookie('total', 60);
+                    timekeeping();
+                }
+            },
+            error: function (e) {
+                if(e.status == 200){
+                    $.cookie('total', 60);
+                    timekeeping();
+                }
+            }
+        });
+    }
+
+    /**
+     * 发送手机验证
+     */
+    function sendChangePhone()
+    {
+        var obj = $('#inputPhone');
+        $inputPhone = obj.val();
+        $.ajax({
+            async: false,
+            url: "/login/forget_pwd/sendchangephone",
+            type: "post",
+            data: {
+                'inputPhone': $inputPhone
+            },
+            dataType: "JSON",
+            contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+            timeout: 30000,
+            success: function (data) {
+                alert(data.msg);
+                if (data.code == 1) {
+                    $.cookie('total', 60);
+                    timekeeping();
+                }
+            },
+            error: function (e) {
+                if(e.status == 200){
+                    $.cookie('total', 60);
+                    timekeeping();
+                }
+            }
+        });
+    }
+
+    /**
+     * 倒计时
+     */
+    function timekeeping()
+    {
+        $("#verifyCode").prop('disabled', 'true');
+        var interval = setInterval(function (){
+           total = $.cookie('total');
+           $("#verifyCode").val('请等待'+total+'秒');
+           total--;
+           if(0 >= total){
+               clearInterval(interval);
+               $.cookie('total', total, {expires: -1});
+               $("#verifyCode").val('获取验证码');
+               $('#verifyCode').prop('disabled', '');
+           }else{
+               $.cookie('total', total);
+           }
+        }, 1000);
+    }
+    </script>
+</body>
+</html>

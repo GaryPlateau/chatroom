@@ -1,0 +1,92 @@
+
+.copyrights {
+	text-indent: -9999px;
+	height: 0;
+	line-height: 0;
+	font-size: 0;
+	overflow: hidden;
+}
+#passwordeye{
+	position: absolute;
+	left: 220px;
+	top: 9px;
+	opacity: .5;
+
+}
+#passwordeye img{
+	height: 30%;
+	width: 30%;
+}
+
+#forget_pwd{
+	color: #FFFFFF;
+	font-family: "Century Gothic", "Microsoft yahei";
+	font-size: 14px;
+	font-weight: bold;
+	font-style: normal;
+	margin-left: 10px;
+	text-decoration: none;
+}
+
+#forget_pwd:hover{
+	color: #1E9FFF;
+}
+
+#cb_agreement{
+	position: absolute;
+	left: -65px;
+}
+
+#cb_agreement_label{
+	position: absolute;
+	font-size: 15px !important;
+	left: -36px;
+	top: -3px
+}
+
+#service_agreement{
+	font-family: "Century Gothic", "Microsoft yahei";
+	font-size: 14px;
+	font-weight: bold;
+	color: #4FA1D9;
+	text-decoration: none;
+}
+
+#authorize_agreement{
+	font-family: "Century Gothic", "Microsoft yahei";
+	font-size: 14px;
+	font-weight: bold;
+	color: #4FA1D9;
+	text-decoration: none;
+}
+
+#authorize_agreement:hover{
+	color: #4FA1FF;
+}
+
+#service_agreement:hover{
+	color: #4FA1FF;
+}
+
+.text-con p{
+	font-size: 13px !important;
+	color: black !important;
+}
+
+.btn-outline-light{
+	color:#f8f9fa;
+	border-color:#f8f9fa!important;
+	border: 1px solid #f8f9fa;
+	border-style:outset;
+	border-radius: 5px;
+	margin-left: 70px;
+	padding: 5px;
+}
+
+.btn-outline-light:hover{
+	color:#212529;
+	background-color:#f8f9fa;
+	border-color:#f8f9fa;
+}
+
+.btn-outline-light.focus
